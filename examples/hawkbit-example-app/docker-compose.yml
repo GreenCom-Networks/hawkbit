@@ -1,0 +1,27 @@
+version: '2'
+services:
+  hawkbit:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mariadb-hawkbit
+      - mongo-hawkbit
+      - rabbitmq-hawkbit
+  mariadb-hawkbit:
+    image: mariadb
+    environment:
+      MYSQL_DATABASE: hawkbit
+      MYSQL_ROOT_PASSWORD: root
+    ports: 
+      - "3306:3306"
+  mongo-hawkbit:
+    image: mongo
+    ports: 
+      - "27017:27017"
+  rabbitmq-hawkbit:
+    image: rabbitmq
+    ports:
+        - "4369:4369"
+        - "5671-5672:5671-5672"
+        - "25672:25672"
