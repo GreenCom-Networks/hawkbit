@@ -33,3 +33,17 @@ The Management API can be accessed via http://localhost:8080/rest/v1
  - **manifest-simple.yml** for a standalone hawkBit installation with embedded H2.
  - **manifest.yml**  for a standalone hawkBit installation with embedded H2 and RabbitMQ service binding for DMF integration (note: this manifest is used for the sandbox above).
 - Run ```cf push``` against you cloud foundry environment.
+
+##Use docker-compose
+
+```
+docker-compose build
+```
+
+and
+
+```
+docker-compose up
+```
+
+
